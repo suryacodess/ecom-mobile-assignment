@@ -1,3 +1,11 @@
+# TO run the application in your local host - 
+- First clone this project or download the zip file from the github.
+- Install npm modules by using "npm i" commad
+- then start the application using "npm start"
+
+NOTE - ONLY FOR MOBILE VIEW.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
