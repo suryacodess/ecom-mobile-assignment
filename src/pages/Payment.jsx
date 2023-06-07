@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import "../index.css";
-import Model from "../components/ProcessingModel";
 import CompletedModel from "../components/CompletedModel";
 
 export default function Payment() {
@@ -22,31 +21,29 @@ export default function Payment() {
   const handleSubmit = () => {
     try {
       if (cardNumber.length === " ") {
-        throw new Error();
+        alert("enter proper card number");
+        throw new Error("enter your card number");
       }
 
       if (cardNumber.length !== 12) {
-        throw new Error();
+        throw new Error("enter valid card number of 12 digits");
       }
 
       if (nameOnCard.length <= 3 || isNaN(nameOnCard) === false) {
-        throw new Error();
-        // alert("enter proper name");
+        throw new Error("enter valid full name");
       }
 
       if (expirationDate.length !== 4) {
-        // alert("enter proper expiration date");
-        throw new Error();
+        throw new Error("enter valid expiration code");
       }
 
       if (isNaN(securityCode) === true || securityCode.length !== 3) {
-        // alert("incorrect security code");
-        throw new Error();
+        throw new Error("enter valid 3 digits security code");
       } else {
         setProcessingModel(true);
       }
     } catch (error) {
-      alert("enter your details first");
+      alert(error.message);
     }
   };
 
