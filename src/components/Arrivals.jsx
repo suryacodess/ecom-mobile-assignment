@@ -6,7 +6,7 @@ import "../index.css";
 export default function Arrivals() {
   return (
     <>
-      <section className="arrivals px-6 mt-5">
+      <section className="arrivals px-4 mt-5">
         <header className="flex justify-between items-center h-11 w-full">
           <div className="title">
             <h2 className="font-bold text-lg">New Arrivals</h2>

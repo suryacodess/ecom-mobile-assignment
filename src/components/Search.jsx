@@ -3,7 +3,7 @@ import searchBtn from "../pngs/search-btn.png";
 
 export default function Search() {
   return (
-    <section className="searchBar px-6 mt-4">
+    <section className="search px-4 mt-4">
       <div className="search-input flex justify-center items-center">
         <input
           type="search"

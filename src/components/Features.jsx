@@ -4,7 +4,7 @@ import "../index.css";
 export default function Features() {
   return (
     <>
-      <section className="feature mt-4 px-6">
+      <section className="feature mt-4 px-4">
         <div className="feature-inner">
           <img src="" alt="" />
           <h1 className="text-2xl font-bold">50% Off</h1>

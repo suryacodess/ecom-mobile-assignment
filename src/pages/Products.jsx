@@ -2,8 +2,12 @@ import React from "react";
 import "../index.css";
 import star from "../pngs/star.png";
 import buyIcon from "../pngs/buy-icon.png";
+import arrow from "../pngs/arrow.png";
+import cart2 from "../pngs/cart-2.png";
+import love from "../pngs/love.png";
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Products() {
   const [count, setCount] = useState(1);
@@ -13,7 +17,6 @@ export default function Products() {
   const [large, setLarge] = useState(true);
   const [extraLarge, setExtraLarge] = useState(false);
   const [extraDoubleLarge, setExtraDoubleLarge] = useState(false);
-
 
   //functionality for size
   const handleSize = (size) => {
@@ -79,11 +82,31 @@ export default function Products() {
   return (
     <main className="product-screen flex flex-col bg-gray-100">
       <div className="product-img">
-        <img
-          src="https://assets.ajio.com/medias/sys_master/root/20230522/HFk7/646b8b91d55b7d0c63ce052f/-473Wx593H-469505114-white-MODEL.jpg"
-          alt=""
-        />
+        <div className="img">
+          <img
+            src="https://assets.ajio.com/medias/sys_master/root/20230522/HFk7/646b8b91d55b7d0c63ce052f/-473Wx593H-469505114-white-MODEL.jpg"
+            alt=""
+          />
+          <div className="product-wishlist">
+            <img className="h-8 w-8" src={love} alt="love" />
+          </div>
+        </div>
+        <div className="product-header w-full">
+          <nav className="footer-nav w-full px-4 py-4">
+            <ul className="flex w-full justify-between items-center">
+              <li>
+                <Link to="/">
+                  <img src={arrow} alt="back to home" />
+                </Link>
+              </li>
+              <li>
+                <img src={cart2} alt="cart2" />
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
+
       <div className="product-description px-4 py-5">
         <div className="product-desc-title flex justify-between items-center">
           <div className="prodcuct-title-text">
@@ -130,8 +153,8 @@ export default function Products() {
               onClick={() => handleSize("small")}
               className={
                 small === true
-                  ? "bg-black text-white border-gray-600 w-7 h-7 flex justify-center items-center outline-none p-3 text-sm rounded-full ml-2"
-                  : "border-gray-600 w-7 h-7 flex justify-center items-center outline-none bg-gray-100 p-3 text-sm rounded-full ml-2"
+                  ? "bg-black text-white border-gray-600 w-10 h-10 flex justify-center items-center outline-none p-3 text-xs rounded-full"
+                  : "border-gray-600 w-10 h-10 flex justify-center items-center outline-none bg-gray-100 p-3 text-xs rounded-full"
               }
             >
               S
@@ -141,8 +164,8 @@ export default function Products() {
               onClick={() => handleSize("medium")}
               className={
                 medium === true
-                  ? "bg-black text-white border-gray-600 w-7 h-7 flex justify-center items-center outline-none p-3 text-sm rounded-full ml-2"
-                  : "border-gray-600 w-7 h-7 flex justify-center items-center outline-none bg-gray-100 p-3 text-sm rounded-full ml-2"
+                  ? "bg-black text-white border-gray-600 w-10 h-10 flex justify-center items-center outline-none p-3 text-xs rounded-full ml-1"
+                  : "border-gray-600 w-10 h-10 flex justify-center items-center outline-none bg-gray-100 p-3 text-xs rounded-full ml-1"
               }
             >
               M
@@ -152,8 +175,8 @@ export default function Products() {
               onClick={() => handleSize("large")}
               className={
                 large === true
-                  ? "bg-black text-white border-gray-600 w-7 h-7 flex justify-center items-center outline-none p-3 text-sm rounded-full ml-2"
-                  : "border-gray-600 w-7 h-7 flex justify-center items-center outline-none bg-gray-100 p-3 text-sm rounded-full ml-2"
+                  ? "bg-black text-white border-gray-600 w-10 h-10 flex justify-center items-center outline-none p-3 text-xs rounded-full ml-1"
+                  : "border-gray-600 w-10 h-10 flex justify-center items-center outline-none bg-gray-100 p-3 text-xs rounded-full ml-1"
               }
             >
               L
@@ -163,8 +186,8 @@ export default function Products() {
               onClick={() => handleSize("extra large")}
               className={
                 extraLarge === true
-                  ? "bg-black text-white border-gray-600 w-7 h-7 flex justify-center items-center outline-none p-3 text-sm rounded-full ml-2"
-                  : "border-gray-600 w-7 h-7 flex justify-center items-center outline-none bg-gray-100 p-3 text-sm rounded-full ml-2"
+                  ? "bg-black text-white border-gray-600 w-10 h-10 flex justify-center items-center outline-none p-3 text-xs rounded-full ml-1"
+                  : "border-gray-600 w-10 h-10 flex justify-center items-center outline-none bg-gray-100 p-3 text-xs rounded-full ml-1"
               }
             >
               XL
@@ -174,8 +197,8 @@ export default function Products() {
               onClick={() => handleSize("double extra large")}
               className={
                 extraDoubleLarge === true
-                  ? "bg-black text-white border-gray-600 w-7 h-7 flex justify-center items-center outline-none p-3 text-sm rounded-full ml-2"
-                  : "border-gray-600 w-7 h-7 flex justify-center items-center outline-none bg-gray-100 p-3 text-sm rounded-full ml-2"
+                  ? "bg-black text-white border-gray-600 w-10 h-10 flex justify-center items-center outline-none p-3 text-xs rounded-full ml-1"
+                  : "border-gray-600 w-10 h-10 flex justify-center items-center outline-none bg-gray-100 p-3 text-xs rounded-full ml-1"
               }
             >
               XXL

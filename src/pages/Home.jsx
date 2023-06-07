@@ -9,7 +9,7 @@ import "../index.css";
 
 export default function Home() {
   return (
-    <div className="container min-h-screen w-full pb-24">
+    <div className="home container min-h-screen w-full pb-24">
       <Header />
       <Hero />
       <Search />
