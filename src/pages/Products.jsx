@@ -8,17 +8,63 @@ import { useState } from "react";
 export default function Products() {
   const [count, setCount] = useState(1);
   const [price, setPrice] = useState("198");
-  const [size, setSize] = useState(false);
-  
+  const [small, setSmall] = useState(false);
+  const [medium, setMedium] = useState(false);
+  const [large, setLarge] = useState(true);
+  const [extraLarge, setExtraLarge] = useState(false);
+  const [extraDoubleLarge, setExtraDoubleLarge] = useState(false);
 
-  const handleCount = (value) => {
-    if (value === "increase") {
+
+  //functionality for size
+  const handleSize = (size) => {
+    console.log(size);
+    if (size === "small") {
+      setSmall(true);
+      setLarge(false);
+      setMedium(false);
+      setExtraLarge(false);
+      setExtraDoubleLarge(false);
+    }
+
+    if (size === "medium") {
+      setMedium(true);
+      setSmall(false);
+      setLarge(false);
+      setExtraLarge(false);
+      setExtraDoubleLarge(false);
+    }
+    if (size === "large") {
+      setLarge(true);
+      setSmall(false);
+      setMedium(false);
+      setExtraLarge(false);
+      setExtraDoubleLarge(false);
+    }
+    if (size === "extra large") {
+      setExtraLarge(true);
+      setSmall(false);
+      setMedium(false);
+      setLarge(false);
+      setExtraDoubleLarge(false);
+    }
+    if (size === "double extra large") {
+      setExtraDoubleLarge(true);
+      setSmall(false);
+      setLarge(false);
+      setMedium(false);
+      setExtraLarge(false);
+    }
+  };
+
+  //functionality fot quantity increment or decrement
+  const handleCount = (quantity) => {
+    if (quantity === "increase") {
       setCount(count + 1);
       let originalPrice = 198.0;
       let totalPrice = parseInt(price);
       setPrice(totalPrice + originalPrice);
     }
-    if (value === "decrease") {
+    if (quantity === "decrease") {
       if (count === 1) {
         setCount(1);
       } else {
@@ -79,19 +125,59 @@ export default function Products() {
         <div className="product-desc-size flex flex-col mt-4">
           <h4 className="text-sm font-bold">Size</h4>
           <div className="size-btns flex mt-2">
-            <button className="border-gray-600 w-7 h-7 flex justify-center items-center outline-none bg-gray-100 p-3 text-sm rounded-full">
+            <button
+              id="sizeBtn"
+              onClick={() => handleSize("small")}
+              className={
+                small === true
+                  ? "bg-black text-white border-gray-600 w-7 h-7 flex justify-center items-center outline-none p-3 text-sm rounded-full ml-2"
+                  : "border-gray-600 w-7 h-7 flex justify-center items-center outline-none bg-gray-100 p-3 text-sm rounded-full ml-2"
+              }
+            >
               S
             </button>
-            <button className="border-gray-600 w-7 h-7 flex justify-center items-center outline-none bg-gray-100 p-3 text-sm rounded-full ml-2">
+            <button
+              id="sizeBtn"
+              onClick={() => handleSize("medium")}
+              className={
+                medium === true
+                  ? "bg-black text-white border-gray-600 w-7 h-7 flex justify-center items-center outline-none p-3 text-sm rounded-full ml-2"
+                  : "border-gray-600 w-7 h-7 flex justify-center items-center outline-none bg-gray-100 p-3 text-sm rounded-full ml-2"
+              }
+            >
               M
             </button>
-            <button className="border-gray-600 w-7 h-7 flex justify-center items-center outline-none bg-gray-100 p-3 text-sm rounded-full ml-2">
+            <button
+              id="sizeBtn"
+              onClick={() => handleSize("large")}
+              className={
+                large === true
+                  ? "bg-black text-white border-gray-600 w-7 h-7 flex justify-center items-center outline-none p-3 text-sm rounded-full ml-2"
+                  : "border-gray-600 w-7 h-7 flex justify-center items-center outline-none bg-gray-100 p-3 text-sm rounded-full ml-2"
+              }
+            >
               L
             </button>
-            <button className="border-gray-600 w-7 h-7 flex justify-center items-center outline-none bg-gray-100 p-3 text-sm rounded-full ml-2">
+            <button
+              id="sizeBtn"
+              onClick={() => handleSize("extra large")}
+              className={
+                extraLarge === true
+                  ? "bg-black text-white border-gray-600 w-7 h-7 flex justify-center items-center outline-none p-3 text-sm rounded-full ml-2"
+                  : "border-gray-600 w-7 h-7 flex justify-center items-center outline-none bg-gray-100 p-3 text-sm rounded-full ml-2"
+              }
+            >
               XL
             </button>
-            <button className="border-gray-600 w-7 h-7 flex justify-center items-center outline-none bg-gray-100 p-3 text-sm rounded-full ml-2">
+            <button
+              id="sizeBtn"
+              onClick={() => handleSize("double extra large")}
+              className={
+                extraDoubleLarge === true
+                  ? "bg-black text-white border-gray-600 w-7 h-7 flex justify-center items-center outline-none p-3 text-sm rounded-full ml-2"
+                  : "border-gray-600 w-7 h-7 flex justify-center items-center outline-none bg-gray-100 p-3 text-sm rounded-full ml-2"
+              }
+            >
               XXL
             </button>
           </div>
