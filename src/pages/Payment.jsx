@@ -21,7 +21,6 @@ export default function Payment() {
   const handleSubmit = () => {
     try {
       if (cardNumber.length === " ") {
-        alert("enter proper card number");
         throw new Error("enter your card number");
       }
 
@@ -34,7 +33,7 @@ export default function Payment() {
       }
 
       if (expirationDate.length !== 4) {
-        throw new Error("enter valid expiration code");
+        throw new Error("enter valid expiration code, eg: 1224");
       }
 
       if (isNaN(securityCode) === true || securityCode.length !== 3) {
@@ -43,7 +42,7 @@ export default function Payment() {
         setProcessingModel(true);
       }
     } catch (error) {
-      alert(error.message);
+        alert(error.message);
     }
   };
 
