@@ -221,10 +221,12 @@ export default function Products() {
             <h3 className="font-bold text-lg">${price}.00</h3>
           </div>
           <div className="cart-btn">
-            <button className="py-3 px-6 bg-black flex justify-between items-center text-white rounded-full">
-              <img src={buyIcon} className="text-sm" alt="buy" />
-              <p className="ml-5 text-sm">Buy Now</p>
-            </button>
+            <Link to="/payment">
+              <button className="py-3 px-6 bg-black flex justify-between items-center text-white rounded-full">
+                <img src={buyIcon} className="text-sm" alt="buy" />
+                <p className="ml-5 text-sm">Buy Now</p>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
