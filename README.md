@@ -1,3 +1,8 @@
+
+
+
+
+
 # TO run the application in your local host - 
 - First clone this project or download the zip file from the github.
 - Install npm modules by using "npm i" commad
