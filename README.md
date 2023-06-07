@@ -1,8 +1,3 @@
-
-
-
-
-
 # TO run the application in your local host - 
 - First clone this project or download the zip file from the github.
 - Install npm modules by using "npm i" commad
@@ -15,7 +10,11 @@ NOTE - ONLY FOR MOBILE VIEW.
 - To navigate products page from home page use the "cart" icon which is present in the footer ui beside "home" icon.
 - To navigate payments page from products page click on "buy now" button it will redirect you to payments page.
 
-## NOTE - Instructions for filling the payment gateway form
+
+![Screenshot (4)](https://github.com/suryacodess/ecom-mobile-assignment/assets/110652251/a1a5c819-d5ed-4f71-9afc-f04a781ef50b)
+
+
+## NOTE - Instructions for filling the payment gateway form - please follow the above image
 - card number input takes only 12 numbers
 - name on card input takes full name please enter atleast two words, eg - surya prakash
 - expiration date input takes 4 digits only, eg - 1224, 0624, 0823
