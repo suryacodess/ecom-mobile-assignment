@@ -1,72 +1,77 @@
 import React from "react";
-import "../index.css";
-import star from "../pngs/star.png";
-import buyIcon from "../pngs/buy-icon.png";
-import arrow from "../pngs/arrow.png";
-import cart2 from "../pngs/cart-2.png";
-import love from "../pngs/love.png";
-
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; //react router
 
+import star from "../pngs/star.png"; //png
+import buyIcon from "../pngs/buy-icon.png"; //png
+import arrow from "../pngs/arrow.png"; //png
+import cart2 from "../pngs/cart-2.png"; //png
+import love from "../pngs/love.png"; //png
+import "../index.css"; //styles
+
+//products page
 export default function Products() {
-  const [count, setCount] = useState(1);
-  const [price, setPrice] = useState("198");
-  const [small, setSmall] = useState(false);
-  const [medium, setMedium] = useState(false);
-  const [large, setLarge] = useState(true);
-  const [extraLarge, setExtraLarge] = useState(false);
-  const [extraDoubleLarge, setExtraDoubleLarge] = useState(false);
+  const [count, setCount] = useState(1); //state
+  const [price, setPrice] = useState("198"); //state
+  const [small, setSmall] = useState(false); //state
+  const [medium, setMedium] = useState(false); //state
+  const [large, setLarge] = useState(true); //state - default size
+  const [extraLarge, setExtraLarge] = useState(false); //state
+  const [extraDoubleLarge, setExtraDoubleLarge] = useState(false); //state
 
-  //functionality for size
+  //functionality for size filter
   const handleSize = (size) => {
     console.log(size);
+
     if (size === "small") {
-      setSmall(true);
-      setLarge(false);
-      setMedium(false);
-      setExtraLarge(false);
-      setExtraDoubleLarge(false);
+      setSmall(true); //on
+      setLarge(false); //off
+      setMedium(false); //off
+      setExtraLarge(false); //off
+      setExtraDoubleLarge(false); //off
     }
 
     if (size === "medium") {
-      setMedium(true);
-      setSmall(false);
-      setLarge(false);
-      setExtraLarge(false);
-      setExtraDoubleLarge(false);
+      setMedium(true); //on
+      setSmall(false); //off
+      setLarge(false); //off
+      setExtraLarge(false); //off
+      setExtraDoubleLarge(false); //off
     }
     if (size === "large") {
-      setLarge(true);
-      setSmall(false);
-      setMedium(false);
-      setExtraLarge(false);
-      setExtraDoubleLarge(false);
+      setLarge(true); //on
+      setSmall(false); //off
+      setMedium(false); //off
+      setExtraLarge(false); //on
+      setExtraDoubleLarge(false); //off
     }
     if (size === "extra large") {
-      setExtraLarge(true);
-      setSmall(false);
-      setMedium(false);
-      setLarge(false);
-      setExtraDoubleLarge(false);
+      setExtraLarge(true); //on
+      setSmall(false); //off
+      setMedium(false); //off
+      setLarge(false); //off
+      setExtraDoubleLarge(false); //off
     }
     if (size === "double extra large") {
-      setExtraDoubleLarge(true);
-      setSmall(false);
-      setLarge(false);
-      setMedium(false);
-      setExtraLarge(false);
+      setExtraDoubleLarge(true); //on
+      setSmall(false); //off
+      setLarge(false); //off
+      setMedium(false); //off
+      setExtraLarge(false); //off
     }
   };
 
   //functionality fot quantity increment or decrement
   const handleCount = (quantity) => {
+    //quantity increase functionality
     if (quantity === "increase") {
       setCount(count + 1);
       let originalPrice = 198.0;
       let totalPrice = parseInt(price);
       setPrice(totalPrice + originalPrice);
     }
+
+    //quantity decrease functionality
     if (quantity === "decrease") {
       if (count === 1) {
         setCount(1);
@@ -221,6 +226,7 @@ export default function Products() {
             <h3 className="font-bold text-lg">${price}.00</h3>
           </div>
           <div className="cart-btn">
+            {/* navigates to payment page */}
             <Link to="/payment">
               <button className="py-3 px-6 bg-black flex justify-between items-center text-white rounded-full">
                 <img src={buyIcon} className="text-sm" alt="buy" />

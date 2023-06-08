@@ -6,42 +6,6 @@ body {
   font-family: "poppins", sans-serif;
 }
 
-/* footer component  */
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  background: #fff;
-  box-shadow: 0px -2px 7px rgba(0, 0, 0, 0.1);
-  border-radius: 30px 30px 0px 0px;
-}
-
-/* Product page  */
-.product-screen {
-  position: relative;
-  .product-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-
-  .product-img {
-    .img {
-      position: relative;
-      .product-wishlist {
-        position: absolute;
-        bottom: 20px;
-        right: 15px;
-      }
-    }
-  }
-}
-
-.product-description {
-  background: #fff;
-  border-radius: 30px 30px 0px 0px;
-}
-
 /* feature component  */
 .feature {
   height: 160px;
@@ -58,28 +22,6 @@ body {
     align-items: flex-start;
     flex-direction: column;
     padding: 20px;
-  }
-}
-
-/* Payment Page  */
-.payment {
-  .payment-inner {
-    .pay {
-      background:#FDF3F9;
-      .card {
-        .input {
-          border: 1px solid #000;
-          border-radius: 8px;
-        }
-      }
-    }
-
-    .submit-btn {
-      .input {
-        background: #bf477f;
-        color:#fff;
-      }
-    }
   }
 }
 
@@ -101,6 +43,7 @@ body {
   }
 }
 
+/* modal loader component */
 .lds-spinner {
   color: official;
   display: inline-block;
@@ -177,5 +120,62 @@ body {
   }
   100% {
     opacity: 0;
+  }
+}
+
+/* footer component  */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  box-shadow: 0px -2px 7px rgba(0, 0, 0, 0.1);
+  border-radius: 30px 30px 0px 0px;
+}
+
+/* Product page  */
+.product-screen {
+  position: relative;
+  .product-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .product-img {
+    .img {
+      position: relative;
+      .product-wishlist {
+        position: absolute;
+        bottom: 20px;
+        right: 15px;
+      }
+    }
+  }
+}
+.product-description {
+  background: #fff;
+  border-radius: 30px 30px 0px 0px;
+}
+
+/* Payment Page  */
+.payment {
+  .payment-inner {
+    .pay {
+      background: #fdf3f9;
+      .card {
+        .input {
+          border: 1px solid #000;
+          border-radius: 8px;
+        }
+      }
+    }
+
+    .submit-btn {
+      .input {
+        background: #bf477f;
+        color: #fff;
+      }
+    }
   }
 }

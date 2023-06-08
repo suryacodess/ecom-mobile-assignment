@@ -1,6 +1,8 @@
 import React from "react";
-import "../index.css";
+import "../index.css"; //styles
 
+
+//preloader - processing modal component
 export default function ProcessingModel() {
   return (
     <section className="model">

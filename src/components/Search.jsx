@@ -1,6 +1,7 @@
 import React from "react";
-import searchBtn from "../pngs/search-btn.png";
+import searchBtn from "../pngs/search-btn.png"; //png
 
+//search component
 export default function Search() {
   return (
     <section className="search px-4 mt-4">

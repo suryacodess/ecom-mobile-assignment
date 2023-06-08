@@ -1,8 +1,9 @@
 import React from "react";
-import bag from "../pngs/bag.png";
-import shoe from "../pngs/shoe.png";
-import "../index.css";
+import bag from "../pngs/bag.png"; //png
+import shoe from "../pngs/shoe.png"; //png
+import "../index.css"; //styles
 
+//arrivals component
 export default function Arrivals() {
   return (
     <>

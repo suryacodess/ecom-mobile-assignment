@@ -1,8 +1,9 @@
 import React from "react";
-import menu from "../pngs/menu.png";
-import mobileLogo from "../pngs/mobile-logo.png";
-import "../index.css";
+import menu from "../pngs/menu.png"; //png
+import mobileLogo from "../pngs/mobile-logo.png"; //png
+import "../index.css"; //styles
 
+// header component
 export default function Header() {
   return (
     <header className="header flex justify-between items-center h-20 w-full px-4 py-2">

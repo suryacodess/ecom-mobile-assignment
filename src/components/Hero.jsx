@@ -1,5 +1,6 @@
 import React from "react";
 
+// hero component
 export default function Hero() {
   return (
     <section className="hero text-2xl px-4">

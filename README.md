@@ -1,9 +1,9 @@
 # TO run the application in your local host - 
 - First clone this project or download the zip file from the github.
-- Install npm modules by using "npm i" commad
+- Install npm modules by using "npm i" command
 - then start the application using "npm start"
 
-NOTE - ONLY FOR MOBILE VIEW.
+## NOTE - ONLY FOR MOBILE VIEW.
 
 ## App Structute
 - This application consists of total three pages - Home Page, Products Page, and Payment Page.

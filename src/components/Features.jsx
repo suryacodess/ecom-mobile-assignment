@@ -1,6 +1,7 @@
 import React from "react";
-import "../index.css";
+import "../index.css"; //styles
 
+//features component
 export default function Features() {
   return (
     <>

@@ -1,24 +1,59 @@
-import React, { useRef, useState } from "react";
-import "../index.css";
-import CompletedModel from "../components/CompletedModel";
+import React, { useState } from "react";
+import "../index.css"; // styles
+import CompletedModel from "../components/CompletedModel"; // payment completed modal component
 
+//payment page
 export default function Payment() {
-  const [cardNumber, setCardNumber] = useState();
-  const [nameOnCard, setNameOnCard] = useState();
-  const [expirationDate, setExpirationDate] = useState();
-  const [securityCode, setSecurityCode] = useState();
+  const [cardNumber, setCardNumber] = useState(); //state
+  const [nameOnCard, setNameOnCard] = useState(); //state
+  const [expirationDate, setExpirationDate] = useState(); //state
+  const [securityCode, setSecurityCode] = useState(); //state
 
-  const [model, setProcessingModel] = useState(false);
+  const [model, setProcessingModel] = useState(false); // state
 
-  const cardNum = useRef();
-  cardNum.current = cardNumber;
-  const name = useRef();
-  name.current = nameOnCard;
-  const expiration = useRef();
-  expiration.current = expirationDate;
-  const security = useRef();
-  security.current = securityCode;
+  //card number function
+  const cardNum = (e) => {
+    let val = e.target.value;
+    if (val.length < 12 || val.length > 12) {
+      e.target.style.border = "1px solid red";
+    } else {
+      e.target.style.border = "1px solid green";
+    }
+  };
+
+  //name on card function
+  const nameCard = (e) => {
+    let val = e.target.value;
+    if (val.length <= 3 || val.length > 15) {
+      e.target.style.border = "1px solid red";
+    } else {
+      e.target.style.border = "1px solid green";
+    }
+  };
+
+  //expiration date - month, year function
+  const monthYear = (e) => {
+    let val = e.target.value;
+    if (val.length < 4 || val.length > 4) {
+      e.target.style.border = "1px solid red";
+    } else {
+      e.target.style.border = "1px solid green";
+    }
+  };
+
+  //security code function
+  const security = (e) => {
+    let val = e.target.value;
+    if (val.length < 3 || val.length > 3) {
+      e.target.style.border = "1px solid red";
+    } else {
+      e.target.style.border = "1px solid green";
+    }
+  };
+
+  //form submit functionality
   const handleSubmit = () => {
+    //error handling
     try {
       if (cardNumber.length === " ") {
         throw new Error("enter your card number");
@@ -42,7 +77,7 @@ export default function Payment() {
         setProcessingModel(true);
       }
     } catch (error) {
-        alert(error.message);
+      alert(error.message); //catches error and alerts message
     }
   };
 
@@ -55,6 +90,7 @@ export default function Payment() {
             <div className="card card-number my-2">
               <label className="text-xs">Card number</label>
               <input
+                onKeyUp={(e) => cardNum(e)}
                 placeholder="Number"
                 onChange={(e) => setCardNumber(e.target.value)}
                 className="input w-full py-2 px-2 outline-none border-black text-xs"
@@ -65,6 +101,7 @@ export default function Payment() {
             <div className="card card-name my-2">
               <label className="text-xs">Name on card</label>
               <input
+                onKeyUp={(e) => nameCard(e)}
                 placeholder="Name"
                 onChange={(e) => setNameOnCard(e.target.value)}
                 className="input w-full py-2 px-2 outline-none border-black text-xs"
@@ -76,10 +113,10 @@ export default function Payment() {
               <div className="card expiration-date mr-1">
                 <label className="text-xs">Expiration date</label>
                 <input
+                  onKeyUp={(e) => monthYear(e)}
                   placeholder="MM/YY"
                   onChange={(e) => setExpirationDate(e.target.value)}
                   type="number"
-                  pattern="^[0-9]{3,4}$"
                   className="input py-2 px-2 outline-none border-black w-full text-xs"
                 />
               </div>
@@ -87,9 +124,11 @@ export default function Payment() {
                 <label className="text-xs">Security code</label>
                 <form action="">
                   <input
+                    onKeyUp={(e) => security(e)}
                     placeholder="CVV"
                     onChange={(e) => setSecurityCode(e.target.value)}
                     type="password"
+                    autoComplete="off"
                     className="input w-full py-2 px-2 outline-none border-black text-xs"
                   />
                 </form>

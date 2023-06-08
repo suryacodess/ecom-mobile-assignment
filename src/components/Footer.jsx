@@ -1,12 +1,13 @@
 import React from "react";
-import "../index.css";
-import profile from "../pngs/profile.png";
-import notification from "../pngs/notification.png";
-import cart from "../pngs/cart.png";
-import home from "../pngs/home.png";
+import profile from "../pngs/profile.png"; //png
+import notification from "../pngs/notification.png"; //png
+import cart from "../pngs/cart.png"; //png
+import home from "../pngs/home.png"; //png
+import "../index.css"; //styles
 
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // react router dom
 
+//footer component
 export default function Footer() {
   return (
     <footer className="footer flex justify-center items-center w-full h-20 px-4">
@@ -17,6 +18,7 @@ export default function Footer() {
             <span className="text-xs pl-2">Home</span>
           </li>
           <li>
+            {/* navigates to producsts page */}
             <Link to="/products">
               <img src={cart} alt="cart" />
             </Link>
